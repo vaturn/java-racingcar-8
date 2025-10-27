@@ -6,13 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarController {
-    public List<Car> createCarList(List<String> carNameList){
-        List<Car> carList = new ArrayList<>();
+    private final List<Car> carList = new ArrayList<>();
 
+    public void createCarList(List<String> carNameList){
         for(String name : carNameList){
             carList.add(new Car(name));
         }
+    }
 
-        return carList;
+    public void playRound(){
+        for(Car car : carList){
+            car.move();
+        }
     }
 }

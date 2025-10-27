@@ -8,7 +8,6 @@ import java.util.List;
 public class GameController {
     private final ConsoleController consoleController;
     private final CarController carController;
-    private final List<Car> carList = new ArrayList<>();
 
     public GameController(){
         consoleController = new ConsoleController();
@@ -18,9 +17,13 @@ public class GameController {
     public void runGame(){
         List<String> carNameList =  consoleController.progressInputCarNamePhase();
 
-        carList.addAll(carController.createCarList(carNameList));
+        carController.createCarList(carNameList);
 
         int stepOfNumber = consoleController.progressInputNumberPhase();
+
+        for(int curRound = 0; curRound <= stepOfNumber ; curRound++){
+            carController.playRound();
+        }
 
         System.out.println(carNameList);
         System.out.println(stepOfNumber);

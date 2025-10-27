@@ -15,7 +15,7 @@ public class Car {
         distance = 0;
     }
 
-    private void move(){
+    public void move(){
         int randomNumber = Randoms.pickNumberInRange(MIN_RANDOM_BOUND, MAX_RANDOM_BOUND);
 
         if(randomNumber >= ACTION_THRESHOLD){
