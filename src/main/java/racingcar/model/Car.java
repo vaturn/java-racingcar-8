@@ -11,6 +11,9 @@ public class Car {
     private static final int ACTION_THRESHOLD = 4;
 
     public Car(String carName){
+        if(!validateName(carName))
+            throw new IllegalArgumentException();
+
         this.carName = carName;
         distance = 0;
     }
@@ -29,5 +32,15 @@ public class Car {
 
     public int getDistance() {
         return distance;
+    }
+
+    private boolean validateName(String carName){
+        if(carName.length() > 5)
+            return false;
+
+        if(carName.isBlank())
+            return false;
+
+        return true;
     }
 }
