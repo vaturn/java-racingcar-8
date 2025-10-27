@@ -7,5 +7,10 @@ public class ConsoleView {
     public void printPromptBeforeInputNumber(){
         System.out.println("시도할 횟수는 몇 회인가요?");
     }
-
+    public void printJustResultString(){
+        System.out.println("실행 결과");
+    }
+    public void printCarStatus(String carName, int distance){
+        System.out.println(carName + " : " + "-".repeat(distance));
+    }
 }

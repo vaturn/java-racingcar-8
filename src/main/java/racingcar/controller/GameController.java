@@ -23,6 +23,7 @@ public class GameController {
 
         for(int curRound = 0; curRound <= stepOfNumber ; curRound++){
             carController.playRound();
+            consoleController.showStatus(carController.getStatus());
         }
 
         System.out.println(carNameList);

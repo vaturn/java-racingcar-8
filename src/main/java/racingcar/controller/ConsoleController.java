@@ -9,6 +9,7 @@ import java.util.List;
 
 public class ConsoleController {
     private final ConsoleView consoleView;
+    private boolean isPrintStatus = false;
     public ConsoleController(){
         this.consoleView = new ConsoleView();
     }
@@ -29,6 +30,17 @@ public class ConsoleController {
             return Integer.parseInt(Console.readLine());
         }catch (Exception e){
             throw new IllegalArgumentException();
+        }
+    }
+
+    public void showStatus(List<CarStatus> carStatusList){
+        if(!isPrintStatus) {
+            consoleView.printJustResultString();
+            isPrintStatus = true;
+        }
+
+        for(CarStatus carStatus: carStatusList){
+            consoleView.printCarStatus(carStatus.name(), carStatus.distance());
         }
     }
 
