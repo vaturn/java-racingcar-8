@@ -33,8 +33,13 @@ public class ConsoleController {
         }
     }
 
+    public void showWinners(List<String> winnerNameList){
+        consoleView.printWinnerNames(formatWinnerNames(winnerNameList));
+    }
+
     public void showStatus(List<CarStatus> carStatusList){
         if(!isPrintStatus) {
+            consoleView.printBlankLine();
             consoleView.printJustResultString();
             isPrintStatus = true;
         }
@@ -42,9 +47,15 @@ public class ConsoleController {
         for(CarStatus carStatus: carStatusList){
             consoleView.printCarStatus(carStatus.name(), carStatus.distance());
         }
+
+        consoleView.printBlankLine();
     }
 
     private List<String> parseName(String userInput){
         return new ArrayList<>(Arrays.asList(userInput.split(",")));
+    }
+
+    private String formatWinnerNames(List<String> winnerNames){
+        return String.join(", ", winnerNames);
     }
 }

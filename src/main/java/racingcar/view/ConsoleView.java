@@ -13,4 +13,10 @@ public class ConsoleView {
     public void printCarStatus(String carName, int distance){
         System.out.println(carName + " : " + "-".repeat(distance));
     }
+    public void printWinnerNames(String winnerNames){
+        System.out.println("최종 우승자 : " + winnerNames);
+    }
+    public void printBlankLine(){
+        System.out.println();
+    }
 }

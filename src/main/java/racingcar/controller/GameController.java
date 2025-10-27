@@ -26,7 +26,6 @@ public class GameController {
             consoleController.showStatus(carController.getStatus());
         }
 
-        System.out.println(carNameList);
-        System.out.println(stepOfNumber);
+        consoleController.showWinners(carController.getWinners());
     }
 }
