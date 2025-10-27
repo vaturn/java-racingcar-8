@@ -2,6 +2,8 @@ package racingcar.controller;
 
 import camp.nextstep.edu.missionutils.Console;
 
+import java.util.List;
+
 public class GameController {
     private final ConsoleController consoleController;
 
@@ -10,10 +12,11 @@ public class GameController {
     }
 
     public void runGame(){
-        consoleController.progressInputCarNamePhase();
+        List<String> carNameList =  consoleController.progressInputCarNamePhase();
 
-        consoleController.progressInputNumberPhase();
+        int stepOfNumber = consoleController.progressInputNumberPhase();
 
-        //System.out.println(inputNameList + roundNumber);
+        System.out.println(carNameList);
+        System.out.println(stepOfNumber);
     }
 }
