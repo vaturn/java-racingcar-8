@@ -21,7 +21,7 @@ public class GameController {
 
         int stepOfNumber = consoleController.progressInputNumberPhase();
 
-        for(int curRound = 0; curRound <= stepOfNumber ; curRound++){
+        for(int curRound = 0; curRound < stepOfNumber ; curRound++){
             carController.playRound();
             consoleController.showStatus(carController.getStatus());
         }
