@@ -1,8 +1,5 @@
 package racingcar.controller;
 
-import racingcar.model.Car;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class GameController {
@@ -17,9 +14,9 @@ public class GameController {
     public void runGame(){
         List<String> carNameList =  consoleController.progressInputCarNamePhase();
 
-        carController.createCarList(carNameList);
-
         int stepOfNumber = consoleController.progressInputNumberPhase();
+
+        carController.createCarList(carNameList);
 
         for(int curRound = 0; curRound < stepOfNumber ; curRound++){
             carController.playRound();
