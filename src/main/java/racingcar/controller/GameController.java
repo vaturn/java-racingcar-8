@@ -1,20 +1,19 @@
 package racingcar.controller;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.view.ConsoleView;
 
 public class GameController {
-    private final ConsoleView consoleView;
+    private final ConsoleController consoleController;
+
     public GameController(){
-        this.consoleView = new ConsoleView();
+        consoleController = new ConsoleController();
     }
+
     public void runGame(){
-        consoleView.printPromptBeforeInputCarName();
-        String inputNameList = Console.readLine();
+        consoleController.progressInputCarNamePhase();
 
-        consoleView.printPromptBeforeInputNumber();
-        int roundNumber = Integer.parseInt(Console.readLine());
+        consoleController.progressInputNumberPhase();
 
-        System.out.println(inputNameList + roundNumber);
+        //System.out.println(inputNameList + roundNumber);
     }
 }
